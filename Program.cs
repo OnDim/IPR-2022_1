@@ -14,3 +14,11 @@ string[] ArrayString(int n)
         return arr;
 }        
 
+// Печать двумерного массива (из подпрограммы) на экран
+
+void PrintArray(int[] a, int n)
+{
+    for(int i=0;i<n;i++)
+        System.Console.WriteLine($"{a[i],4}");
+            System.Console.WriteLine();
+}
