@@ -8,6 +8,7 @@
 string[] ArrayString(int n)
 {
     string[] arr;
+    Console.WriteLine("Введите массив строк");
     arr = new string[n];
     for(int i=0;i<n;i++)
         arr[i]=Console.ReadLine();
@@ -16,9 +17,34 @@ string[] ArrayString(int n)
 
 // Печать двумерного массива (из подпрограммы) на экран
 
-void PrintArray(int[] a, int n)
+void PrintArray(string[] a, int n)
 {
     for(int i=0;i<n;i++)
         System.Console.WriteLine($"{a[i],4}");
             System.Console.WriteLine();
 }
+
+// Результирующая матрица
+
+string[] MyArrayNew(string[] arr)
+{
+    string[] rez=new string[arr.Length];
+    int count = 0;
+    for(int i=0;i<arr.Length;i++)
+        {
+        if (arr[i].Length<=3)
+        {
+            rez[count] = arr[i];
+            count++;
+        }
+        }
+    return rez;  
+}    
+
+// Основная прграмма
+
+int n=5;
+string[] arr=ArrayString(n);
+System.Console.WriteLine();
+string[] rez=MyArrayNew(arr);
+PrintArray(rez, n );
